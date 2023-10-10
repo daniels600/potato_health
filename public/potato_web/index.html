@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Potato Health is a health-tech startup building a wellness super web app that helps health-conscious individuals stay consistent by offering monthly personalized wellness plans and access to wellness providers, services, and products.">
+    <meta name="author" content="">
+	<meta name="keywords" content="Potato Health, Potato, PotatoAI, PotatoFit, Potato Challenges, Potato Zen, Potato Gen, True Wellness, Path to wellness, Fitness, Nutrition, Mental Health, The Ultimate guide to wellness, Wellness Coaches, Wellness Providers, Personalized Wellness Plan" />
+    <title>Potato Web | Your Wellness Journey Bengins</title>
+
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/menu.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <!-- <link href="css/custom.css" rel="stylesheet"> -->
+	
+	<!-- MODERNIZR MENU -->
+	<script src="js/modernizr.js"></script>
+
+</head>
+
+<body>	
+	
+	<nav>
+		<ul class="cd-primary-nav">
+			<li><a href="../index.html" class="animated_link">Home</a></li>
+			<li><a href="../index.html#pricing" class="animated_link">Pricing</a></li>
+			<li><a href="../contact.html" class="animated_link">Contact Us</a></li>
+		</ul>
+	</nav>
+	<!-- /menu -->
+	
+	<div class="container-fluid">
+	    <div class="row row-height" style="display: flex !important; justify-content: center !important; align-items: center !important;">
+	        <div class="col-xl-8 col-lg-8 content-right" id="start">
+	            <div id="wizard_container">
+	                <div id="top-wizard">
+	                    <span id="location"></span>
+	                    <div id="progressbar"></div>
+	                </div>
+	                <!-- /top-wizard -->
+	                <form id="wrapped" method="POST" enctype="multipart/form-data">
+	                    <input id="website" name="website" type="text" value="">
+	                    <!-- Leave for security protection, read docs for details -->
+	                    <div id="middle-wizard">
+
+	                    	<!--First Step-->
+	                        <div class="step" >
+	                            <div class="summary">
+	                                <div class="wrapper" style="margin-top: -50px !important; margin-bottom: -50px !important;">
+	                                    <h3>Welcome to Potato Web</h3>
+	                                    <p>Your wellness journey of a 1000-mile begins now!</p>
+	                                    <p>Our wellness plan comprises <strong><i>a fitness guide, a nutrition guide, and a mindfulness guide.</i></strong></p>
+	                                </div>
+	                                <label>Choose Plan<small style="font-size: 11px;"><i>(click on basic, premium, or enterprise to learn more!)</i></small></label>
+									<div class="form-group radio_input add_bottom_30">
+										<label class="container_radio me-3"><a href="#" data-bs-toggle="modal" data-bs-target="#basic-txt">Basic</a>
+											<input type="radio" name="pricing_tier" value="Basic" class="required">
+											<span class="checkmark"></span>
+										</label>
+										<label class="container_radio me-3"><a href="#" data-bs-toggle="modal" data-bs-target="#premium-txt">Premium</a>
+											<input type="radio" name="pricing_tier" value="Premium" class="required">
+											<span class="checkmark"></span>
+										</label>
+										<label class="container_radio"><a href="#" data-bs-toggle="modal" data-bs-target="#enterprise-txt">Enterprise</a>
+											<input type="radio" name="pricing_tier" value="Enterprise" class="required">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+	                            </div>
+	                        </div>
+	                        <!-- /step last-->
+
+							<!--Demographics-->
+							<div class="step">
+	                            <h2 class="section_title">Demographics</h2>
+	                            <h3 class="main_question">Create Your Wellness Avatar</h3>
+	                            <div class="form-group add_top_30">
+	                                <label for="name">First and Last Name <small>(eg. Clark Kent)</small></label>
+	                                <input type="text" name="name" id="name" maxlength="20" class="form-control required" onchange="getVals(this, 'name_field');">
+	                            </div>
+	                            <div class="form-group">
+	                                <label for="email">Email Address</label>
+	                                <input type="email" name="email" id="email" class="form-control required" onchange="getVals(this, 'email_field');">
+	                            </div>
+	                            <div class="form-group">
+	                                <label for="occupation">Occupation <small>(eg. Accountant)</small></label>
+	                                <input type="text" name="occupation" id="occupation" class="form-control required">
+	                            </div>
+								<div class="form-group">
+									<label for="age_range">Select your age range</label>
+									<div class="styled-select">
+										<select class="form-control required" id="age_range" name="age_range">
+											<option value="">Select your age range</option>
+											<option value="&lt;18">Below 18</option>
+											<option value="18-29">18-29</option>
+											<option value="30-39">30-39</option>
+											<option value="40-49">40-49</option>
+											<option value="50-59">50-60</option>
+											<option value="&gt;60">Above 60</option>
+										</select>
+									</div>
+								</div>
+								<label>Gender</label>
+								<div class="form-group radio_input add_bottom_30">
+								    <label class="container_radio me-3">Male
+								        <input type="radio" name="gender" value="Male" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio me-3">Female
+								        <input type="radio" name="gender" value="Female" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+									<label class="container_radio">Prefer Not to Say
+								        <input type="radio" name="gender" value="PreferNotToSay" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+	                        </div>
+	                        <!-- /step-->
+
+							<!--Fitness 1-->
+	                    	<div class="step">
+	                            <h2 class="section_title">Fitness</h2>
+	                            <h3 class="main_question">Step 1 - Your Active Lifestyle</h3>
+								<div class="form-group add_top_30">
+									<label for="weight_range">What is your BMI?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="weight_range" name="weight_range">
+											<option value="">What is your BMI?</option>
+											<option value="&lt;18.5">Less than 18.5 - Underweight</option>
+											<option value="18.5-24.9">18.5-24.9 - Average weight</option>
+											<option value="25.0-29.9">25.0-29.9 - Overweight</option>
+											<option value="&gt;30">Greater 30 - Obese</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="active_level">How active are you in your daily life?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="active_level" name="active_level">
+											<option value="">How active are you in your daily life?</option>
+											<option value="beginner">Beginner - Little to no exercise</option>
+											<option value="intermediate">Intermediate - Exercise 2 to 3 days per week</option>
+											<option value="advanced">Advanced - Exercise 5+ days per week</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group add_bottom_30">
+	                                <label for="fitness_days">Average days per week do you exercise at gym or home</label>
+	                                <input type="number" name="fitness_days" min="0" max="7" id="fitness_days" class="form-control required">
+	                            </div>
+	                        </div>
+	                        <!-- /step-->
+
+							<!--Fitness 2-->
+							<div class="step">
+	                            <h2 class="section_title">Fitness</h2>
+	                            <h3 class="main_question">Step 2 - Your Goals and Preferences</h3>
+								<div class="form-group add_top_30">
+									<label for="fitness_goals">Your specific fitness goal</label>
+									<div class="styled-select">
+										<select class="form-control required" id="fitness_goals" name="fitness_goals">
+											<option value="">Your specific fitness goal</option>
+											<option value="lose_weight">Lose weight</option>
+											<option value="lose_bellyfat">Lose belly fat</option>
+											<option value="gain_muscle">Gain muscle</option>
+											<option value="stay_healthy">Stay healthy</option>
+											<option value="improve_endurance">Improve endurance</option>
+											<option value="other">Other</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="other_goals">If 'other' in the above, state other goals <small>(separate with ,)</small></label>
+									<input type="text" name="other_goals" id="other_goals" class="form-control">
+								</div>
+								<label>Preferred fitness/workout stucture for your complete plan</label>
+								<div class="form-group radio_input add_bottom_30">
+								    <label class="container_radio me-3">At Gym 
+								        <input type="radio" name="workout_routine" value="gym_workout" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio me-3">At Home
+								        <input type="radio" name="workout_routine" value="home_workout" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+									<label class="container_radio">Mixed (Both Gym & Home)
+								        <input type="radio" name="workout_routine" value="mixed_workout" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+	                        </div>
+	                        <!-- /step-->
+							
+							<!--Nutrition 1-->
+							<div class="step">
+	                            <h2 class="section_title">Nutrition</h2>
+	                            <h3 class="main_question">Step 1 - Your Dieting Lifestyle</h3>
+								<div class="form-group add_top_30">
+									<label for="current_diet">Describe your current diet</label>
+									<div class="styled-select">
+										<select class="form-control required" id="current_diet" name="current_diet">
+											<option value="">Describe your current diet</option>
+											<option value="vegetarian">Vegetarian</option>
+											<option value="vegan">Vegan</option>
+											<option value="omnivore">Omnivore</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+	                                <label for="takeout">How many days per week do you eat out or order takeout?</label>
+	                                <input type="number" name="takeout" min="0" max="7" id="takeout" class="form-control required">
+	                            </div>
+								<div class="form-group add_bottom_30">
+									<label for="junk_food">How often do you consume junk food (like pizzas, soda drinks, etc.)?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="junk_food" name="junk_food">
+											<option value="">How often do you consume junk food (like pizzas, soda drinks, etc.)?</option>
+											<option value="no_junkfoods">I don't eat junk foods</option>
+											<option value="occasionally_junkfoods">Occasionally about once/twice in a month</option>
+											<option value="1to2times_junkfoods">1-2 times a week</option>
+											<option value="3to6times_junkfoods">3-6 times a week</option>
+											<option value="everyday_junkfood">Everyday</option>
+										</select>
+									</div>
+								</div>
+	                        </div>
+	                        <!-- /step-->
+
+							<!--Nutrition 2-->
+							<div class="step">
+	                            <h2 class="section_title">Nutrition</h2>
+	                            <h3 class="main_question">Step 2 - Your Meal Plan</h3>
+								<label>Do you have any dietary restrictions or allergies?</label>
+								<div class="form-group radio_input">
+								    <label class="container_radio me-3">Yes 
+								        <input type="radio" name="diet_restrictions" value="yes_diet" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">No
+								        <input type="radio" name="diet_restrictions" value="no_diet" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+								<div class="form-group">
+									<label for="allergies">If 'yes' in the above, state dietary restrictions <small>(separate with ,)</small></label>
+									<input type="text" name="allergies" id="allergies" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="favorite_foods">What are your favorite healthy foods or meals? <small>(separate with ,)</small></label>
+									<input type="text" name="favorite_foods" id="favorite_foods" class="form-control required">
+								</div>
+								<div class="form-group">
+									<label for="nutrition_goals">Your specific nutrition goal</label>
+									<div class="styled-select">
+										<select class="form-control required" id="nutrition_goals" name="nutrition_goals">
+											<option value="">Your specific nutrition goal</option>
+											<option value="healthy_eating">Improve healthy eating</option>
+											<option value="detox">Start detox</option>
+											<option value="reduce_cholesterol">Reduce cholesterol levels</option>
+											<option value="boost_immunity">Boost immunity</option>
+											<option value="lower_chronicdisease">Lower risks of chronic disease</option>
+											<option value="improve_pregnancy">Improve healthy pregnancy</option>
+											<option value="other">Other</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group add_bottom_30">
+									<label for="other_nutrigoals">If 'other' in the above, state other goals <small>(separate with ,)</small></label>
+									<input type="text" name="other_nutrigoals" id="other_nutrigoals" class="form-control">
+								</div>
+	                        </div>
+	                        <!-- /step-->
+
+							<!--Mental Health-->
+	                    	<div class="step">
+	                            <h2 class="section_title">Mental Health</h2>
+	                            <h3 class="main_question">Your Stress Management</h3>
+								<div class="form-group add_top_30">
+									<label for="stress_level">How would you rate your stress levels?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="stress_level" name="stress_level">
+											<option value="">How would you rate your stress levels?</option>
+											<option value="1">1 - Minimal stress</option>
+											<option value="2">2 - Below average stress</option>
+											<option value="3">3 - Average stress</option>
+											<option value="4">4 - Above average stress</option>
+											<option value="5">5 - Extreme stress</option>
+										</select>
+									</div>
+								</div>
+								<label>Have you ever been diagnosed with a mental health condition (eg., anxiety, depression, etc.)?</label>
+								<div class="form-group radio_input">
+								    <label class="container_radio me-3">Yes 
+								        <input type="radio" name="mental_condition" value="yes_condition" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">No
+								        <input type="radio" name="mental_condition" value="no_condition" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+								<label>Are you currently taking any mental health medications?</label>
+								<div class="form-group radio_input">
+								    <label class="container_radio me-3">Yes 
+								        <input type="radio" name="mental_meds" value="yes_meds" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">No
+								        <input type="radio" name="mental_meds" value="no_meds" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+								<label>Do you currently consume any mental health services?</label>
+								<div class="form-group radio_input">
+								    <label class="container_radio me-3">Yes 
+								        <input type="radio" name="mental_doc" value="yes_doc" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">No
+								        <input type="radio" name="mental_doc" value="no_doc" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+								<label>Interested in incorporating mindfulness into your plan?</label>
+								<div class="form-group radio_input add_bottom_30">
+								    <label class="container_radio me-3">Yes 
+								        <input type="radio" name="mindfulness" value="yes_mindfulness" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">No
+								        <input type="radio" name="mindfulness" value="no_mindfulness" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+	                        </div>
+	                        <!-- /step-->
+
+							<!--Sleep-->
+							<div class="step">
+	                            <h2 class="section_title">Sleep</h2>
+	                            <h3 class="main_question">Your Sleep Life</h3>
+								<div class="form-group add_top_30">
+	                                <label for="sleep_hours">How many hours of sleep do you typically get per night?</label>
+	                                <input type="number" name="sleep_hours" min="1" max="16" id="sleep_hours" class="form-control required">
+	                            </div>
+								<label>Do you experience difficulty falling asleep or staying asleep?</label>
+								<div class="form-group radio_input add_bottom_30">
+								    <label class="container_radio me-3">Yes 
+								        <input type="radio" name="sleep_patterns" value="yes_difficult" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">No
+								        <input type="radio" name="sleep_patterns" value="no_difficult" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+	                        </div>
+	                        <!-- /step-->
+
+							<!--Personal Lifestyle-->
+							<div class="step">
+	                            <h2 class="section_title">Social Lifestyle</h2>
+	                            <h3 class="main_question">Your Social Lifestyle</h3>
+								<label>Do you smoke or use any tobacco products?</label>
+								<div class="form-group radio_input">
+								    <label class="container_radio me-3">Yes 
+								        <input type="radio" name="tobacco" value="yes_tobacco" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">No
+								        <input type="radio" name="tobacco" value="no_tobacco" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+								<div class="form-group">
+									<label for="alcoholic_beverages">How often do you consume alcoholic beverages?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="alcoholic_beverages" name="alcoholic_beverages">
+											<option value="">How often do you consume alcoholic beverages?</option>
+											<option value="no_beverage">I don't drink acoholic beverages</option>
+											<option value="occasionally_beverage">Occasionally about once/twice in a month</option>
+											<option value="1to2times_beverage">1-2 times a week</option>
+											<option value="3to6times_beverage">3-6 times a week</option>
+											<option value="everyday_beverage">Everyday</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group add_bottom_30">
+									<label for="hobbies">What hobbies/activities do you enjoy that help you relax and unwind? (eg. dancing)</label>
+									<input type="text" name="hobbies" id="hobbies" class="form-control required">
+								</div>
+	                        </div>
+	                        <!-- /step-->
+
+							<!--Extra Info-->
+	                        <div class="step">
+							    <h2 class="section_title">Extra Gists</h2>
+							    <h3 class="main_question">Other Preferences</h3>
+							    <div class="form-group add_top_30">
+							        <label for="concerns">Share any concerns, requests, or preferences that can help us create an exceptional personalized wellness plan for you</label>
+							        <textarea name="concerns" id="concerns" class="form-control" style="height: 100px"></textarea>
+							    </div>
+								<label>Do you want to subscribe to our newsletter? (Get info on wellness tips, great deals, news, etc.)</label>
+								<div class="form-group radio_input add_bottom_30">
+								    <label class="container_radio me-3">Yes 
+								        <input type="radio" name="newsletter" value="yes_newsletter" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">No
+								        <input type="radio" name="newsletter" value="no_newsletter" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+							</div>
+							<!-- /step-->
+							
+							<!--Last Step-->
+	                        <div class="submit step" id="end">
+	                            <div class="summary">
+	                                <div class="wrapper" style="margin-top: -50px !important; margin-bottom: -50px !important;">
+	                                    <h3>Yaay!!! You made it,<br><span id="name_field"></span>!</h3>
+	                                    <p>Your wellness plan will be sent to your email address <strong id="email_field"></strong></p>
+										<p>Your assigned coaches will be in touch. Until then, Vaya Con Dios!!!</p>
+										<p>Need help? Contact support at <a href="mailto:hello@potathealth.com">hello@potathealth.com</a> or <a href="tel:+233596308718">(+233)59-630-8718.</a></p>
+	                                </div>									
+	                                <div class="text-center">
+	                                    <div class="form-group terms">
+	                                        <label class="container_check">Please accept our <a href="#" data-bs-toggle="modal" data-bs-target="#terms-txt">Terms of Service</a> before Submit
+	                                            <input type="checkbox" name="terms" value="Yes" class="required">
+	                                            <span class="checkmark"></span>
+	                                        </label>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <!-- /step last-->
+
+	                    </div>
+	                    <!-- /middle-wizard -->
+	                    <div id="bottom-wizard">
+	                        <button type="button" name="backward" class="backward">Prev</button>
+	                        <button type="button" name="forward" class="forward">Next</button>
+	                        <button type="submit" name="process" class="submit">Submit</button>
+	                    </div>
+	                    <!-- /bottom-wizard -->
+	                </form>
+	            </div>
+	            <!-- /Wizard container -->
+	        </div>
+	        <!-- /content-right-->
+	    </div>
+	    <!-- /row-->
+	</div>
+	<!-- /container-fluid -->
+
+	<div class="cd-overlay-nav">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-nav -->
+
+	<div class="cd-overlay-content">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-content -->
+
+	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+	<!-- /menu button -->
+	
+	<!-- Modal terms -->
+	<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="termsLabel">Terms of Service</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Welcome to Potato Health! We are excited to have you as a user of our wellness super app. Before you begin your journey towards a healthier lifestyle with us, please take a moment to read and understand our Terms of Service ("Terms"). These Terms outline the terms and conditions governing your use of Potato Health's web app, including how we collect, use, and protect your data. By using our services, you agree to abide by these Terms.</p>
+					<p><strong>1. Acceptance of Terms:</strong> By using Potato Health, you agree to be bound by these Terms, including any future modifications. If you do not agree with any part of these Terms, please do not use our services. We may revise and update these Terms from time to time, so please review them periodically.</p>
+					<p><strong>2. Privacy and Data Usage:</strong> Potato Health takes your privacy seriously and is committed to protecting your personal information. Our data usage practices are in compliance with the global FTC data privacy and security policy and other applicable data protection regulations. Your data will be used in the following ways:</p>
+					<ul>
+						<li><strong>a. Data Collection:</strong> We collect the information you provide during the registration process and as you use the app. This may include personal information, health-related data, and other information necessary to create personalized wellness plans.</li>
+						<li><strong>b. Data Processing:</strong> Your data will be processed using our AI models, including third-party models like ChatGPT-4, to develop personalized wellness plans and provide you with relevant content, recommendations, and insights.</li>
+						<li><strong>c. Data Security:</strong> We employ industry-standard security measures to protect your data from unauthorized access, disclosure, or alteration.</li>
+						<li><strong>d. Data Sharing:</strong> We may share aggregated and anonymized data with wellness providers, partners, and researchers to improve our services and advance wellness research. Your personal information will never be shared without your explicit consent.</li>
+						<li><strong>e. Communication:</strong> We may send you notifications, updates, and promotional messages based on your preferences. You can opt out of promotional communications at any time.</li>
+					</ul>
+					<p><strong>3. User Responsibilities</strong> By using Potato Health, you agree to the following user responsibilities:</p>
+					<ul>
+						<li><strong>a. Accurate Information:</strong> You must provide accurate and truthful information when using our app, especially when providing personal or health-related data.</li>
+						<li><strong>b. Account Security:</strong> You are responsible for maintaining the security of your account, including your login credentials. Notify us immediately of any unauthorized use or security breach.</li>
+						<li><strong>c. Compliance:</strong> You agree to comply with all applicable laws and regulations when using Potato Health.</li>
+					</ul>
+					<p><strong>4. Content and Intellectual Property:</strong> All content provided through Potato Health, including text, graphics, logos, images, and software, is owned or licensed by Potato Health and is protected by copyright and other intellectual property laws. You may not use, reproduce, or distribute this content without our written permission.</p>
+					<p><strong>5. Termination:</strong> Potato Health reserves the right to terminate or suspend your account at its discretion, without notice, for any violation of these Terms or for any reason deemed necessary to protect our users and the integrity of our services.</p>
+					<p><strong>6. Disclaimer of Warranties:</strong> Potato Health provides its services "as is" and makes no warranties or representations regarding the accuracy, reliability, or suitability of the content and services offered.</p>
+					<p><strong>7. Limitation of Liability:</strong> Potato Health shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of our services or any third-party content or services linked to our app.</p>
+					<p><strong>8. Governing Law:</strong> These Terms are governed by the laws of the United States of America and the Republic of Ghana, as applicable. Any disputes arising from or related to these Terms or your use of our Service shall be subject to the exclusive jurisdiction of the courts in the United States and Ghana, as appropriate.</p>
+					<p><strong>9. Contact Us:</strong> If you have any questions, concerns, or feedback regarding these Terms or Potato Health's services, please contact us at hello@potatohealth.com or (+233)59-630-8718.</p>
+					<p>By using Potato Health, you acknowledge that you have read, understood, and agreed to these Terms. We are committed to providing you with a safe and valuable wellness experience, and your privacy and data security are paramount to us. Thank you for choosing Potato Health to support your wellness journey!</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn_1" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
+	<!-- Modal basic -->
+	<div class="modal fade" id="basic-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="termsLabel">Our Basic Plan</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>For our basic tier ($5/month), you'll get a basic wellness plan:</p>
+					<ul>
+						<li><strong>7 workouts (specify if you prefer home, gym, or mixed workouts).</strong></li>
+						<li><strong>A 6-healthy diet plan.</strong></li>
+						<li><strong>5 mindfulness routines for a month.</strong></li>
+					</ul>
+					<p>Moreover, you'll get connected to a 1-tier wellness coaching support of 1 out of 3 unique coaches (a fitness coach only).</p>
+					<p>Need help? Contact support at <a href="mailto:hello@potathealth.com">hello@potathealth.com</a> or <a href="tel:+233596308718">(+233)59-630-8718.</a></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn_1" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
+	<!-- Modal premium -->
+	<div class="modal fade" id="premium-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="termsLabel">Our Premium Plan</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>For our premium tier ($30/month), you'll get an advanced wellness plan:</p>
+					<ul>
+						<li><strong>16 workouts (specify if you prefer home, gym, or mixed workouts).</strong></li>
+						<li><strong>A 14-healthy diet plan.</strong></li>
+						<li><strong>10 mindfulness routines for a month.</strong></li>
+					</ul>
+					<p>Moreover, you'll get connected to a 3-tier wellness coaching support of 3 unique coaches (a fitness coach, a nutrition expert, and a mental health coach).</p>
+					<p>Need help? Contact support at <a href="mailto:hello@potathealth.com">hello@potathealth.com</a> or <a href="tel:+233596308718">(+233)59-630-8718</a></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn_1" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
+	<!-- Modal enterprise -->
+	<div class="modal fade" id="enterprise-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="termsLabel">Our Enterprise Plan</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>For our enterprise tier (custom pricing), each employee/team gets an advanced wellness plan:</p>
+					<ul>
+						<li><strong>16 workouts (specify if you prefer home, gym, or mixed workouts).</strong></li>
+						<li><strong>A 14-healthy diet plan.</strong></li>
+						<li><strong>10 mindfulness routines for a month.</strong></li>
+						<li><strong>Weekly team engagement sessions.</strong></li>
+					</ul>
+					<p>Each employee/team gets connected to a 3-tier wellness coaching support of 3 unique coaches: a fitness coach, a nutrition expert, and a mental health coach. Moreover, employers receive weekly in-depth analytics and reports on key employee metrics. </p>
+					<p>Need help? Contact support at <a href="mailto:hello@potathealth.com">hello@potathealth.com</a> or <a href="tel:+233596308718">(+233)59-630-8718</a></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn_1" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	
+	<!--Main Loader-->
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div>
+	<!-- /Preload -->
+	
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div>
+	<!-- /loader_form -->
+
+	<!--Preferred Fucking Loader-->
+	<!-- <div id="overlayer"></div>
+	<div class="loader">
+		<div class="spinner-border" role="status">
+		<span class="sr-only"></span>
+		</div>
+	</div> -->
+
+
+
+	<!-- COMMON SCRIPTS -->
+	<!-- <script src="js/custom.js"></script> -->
+	<script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/common_scripts.min.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/common_functions.js"></script>
+	<script src="js/file-validator.js"></script>
+	<script src="js/tagify.min.js"></script>
+	<!-- Wizard script-->
+	<script src="js/func_2.js"></script>
+
+</body>
+
+</html>
