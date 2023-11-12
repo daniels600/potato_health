@@ -1,0 +1,50 @@
+
+@font-face {
+    font-family: myFont;
+    src: url('GentyDemo-Regular.ttf');
+} 
+
+.mainlogo {
+    font-family: myFont; 
+    font-weight: normal; 
+    font-size: 25px !important;
+}
+
+.subtext {
+    color: #181818 !important;
+}
+
+.btn-blk {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.btn-align {
+    margin-right: 55px !important;
+}
+
+.btn-color {
+    background-color: #fff !important;
+    color: #34bf49 !important;
+}
+
+.btn-color:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.btn-color:active {
+    background-color: #007bff !important;
+    color: #34bf49 !important;
+}
+
+.btn-color:visited {
+    background-color: #fff !important;
+    color: #34bf49 !important;
+}
+
+@media only screen and (max-width: 1024px) {
+    .btn-blk {
+        display: block !important;
+    }
+  }
