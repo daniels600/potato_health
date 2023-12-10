@@ -87,5 +87,11 @@ function getVals(formControl, controlType) {
             var value = $(formControl).val();
             $("#email_field").text(value);
             break;
+
+        case 'phone_field':
+            // Get the value for input
+            var value = $(formControl).val();
+            $("#phone_field").text(value);
+            break;
     }
 }

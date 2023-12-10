@@ -20,7 +20,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/menu.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<link href="css/vendors.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet"> 
 
     <!-- YOUR CUSTOM CSS -->
     <!-- <link href="css/custom.css" rel="stylesheet"> -->
@@ -59,24 +59,20 @@
 	                        <div class="step" >
 	                            <div class="summary">
 	                                <div class="wrapper" style="margin-top: -50px !important; margin-bottom: -50px !important;">
-	                                    <h3>Welcome to PotatoAI</h3>
-	                                    <p>Your wellness journey of 1000 steps and pushups begins now!</p>
-	                                    <p>Our wellness plan comprises <strong><i>a fitness guide, a nutrition guide, and a mindfulness guide.</i></strong></p>
+	                                    <h3>Your journey starts here</h3>
+	                                    <p>Let's help match you with a great health coach and health plan with this 4-minute reflection quiz.</p>
+	                                    <p>Our holistic health plan includes a fitness, nutrition, and mindfulness guide.</p>
 	                                </div>
-	                                <label>Choose Plan<small style="font-size: 11px;"><i> (click on basic or premium to learn more!)</i></small></label>
+	                                <label>Choose Your Preferred Track</label>
 									<div class="form-group radio_input add_bottom_30">
-										<label class="container_radio me-3"><a href="#" data-bs-toggle="modal" data-bs-target="#basic-txt">Basic</a>
+										<label class="container_radio me-3"><a href="#" data-bs-toggle="modal" data-bs-target="#basic-txt">Basic Plan</a>
 											<input type="radio" name="pricing_tier" value="Basic" class="required">
 											<span class="checkmark"></span>
 										</label>
-										<label class="container_radio me-3"><a href="#" data-bs-toggle="modal" data-bs-target="#premium-txt">Premium</a>
+										<label class="container_radio me-3"><a href="#" data-bs-toggle="modal" data-bs-target="#premium-txt">Premium Plan</a>
 											<input type="radio" name="pricing_tier" value="Premium" class="required">
 											<span class="checkmark"></span>
 										</label>
-										<!-- <label class="container_radio"><a href="#" data-bs-toggle="modal" data-bs-target="#enterprise-txt">Enterprise</a>
-											<input type="radio" name="pricing_tier" value="Enterprise" class="required">
-											<span class="checkmark"></span>
-										</label> -->
 									</div>
 	                            </div>
 	                        </div>
@@ -85,7 +81,7 @@
 							<!--Demographics-->
 							<div class="step">
 	                            <h2 class="section_title">Demographics</h2>
-	                            <h3 class="main_question">Create Your Wellness Avatar</h3>
+	                            <h3 class="main_question">Your Biography</h3>
 	                            <div class="form-group add_top_30">
 	                                <label for="name">First and Last Name <small>(eg. Clark Kent)</small></label>
 	                                <input type="text" name="name" id="name" maxlength="20" class="form-control required" onchange="getVals(this, 'name_field');">
@@ -93,6 +89,10 @@
 	                            <div class="form-group">
 	                                <label for="email">Email Address</label>
 	                                <input type="email" name="email" id="email" class="form-control required" onchange="getVals(this, 'email_field');">
+	                            </div>
+	                            <div class="form-group">
+	                                <label for="phone_number">Phone Number <small>(enter country code eg. +233591234567)</small></label>
+	                                <input type="tel" name="phone_number" id="phone_number" maxlength="14" class="form-control required" pattern="[+][0-9]{12}|[+][0-9]{11}" title="Use format: +233591234567 or +12345678910" onchange="getVals(this, 'phone_field');">
 	                            </div>
 	                            <div class="form-group">
 	                                <label for="occupation">Occupation <small>(eg. Accountant)</small></label>
@@ -103,103 +103,190 @@
 									<div class="styled-select">
 										<select class="form-control required" id="age_range" name="age_range">
 											<option value="">Select your age range</option>
-											<option value="&lt;18">Below 18</option>
-											<option value="18-29">18-29</option>
-											<option value="30-39">30-39</option>
-											<option value="40-49">40-49</option>
-											<option value="50-59">50-60</option>
-											<option value="&gt;60">Above 60</option>
+											<option value="19 or younger">19 or younger</option>
+											<option value="20s">20s</option>
+											<option value="30s">30s</option>
+											<option value="40s">40s</option>
+											<option value="50s">50s</option>
+											<option value="60 or higher">60 or higher</option>
 										</select>
 									</div>
 								</div>
-								<label>Gender</label>
-								<div class="form-group radio_input add_bottom_30">
-								    <label class="container_radio me-3">Male
-								        <input type="radio" name="gender" value="Male" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio me-3">Female
-								        <input type="radio" name="gender" value="Female" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-									<label class="container_radio">Prefer Not to Say
-								        <input type="radio" name="gender" value="PreferNotToSay" class="required">
-								        <span class="checkmark"></span>
-								    </label>
+								<div class="form-group add_bottom_30">
+									<label for="gender">Gender</label>
+									<div class="styled-select">
+										<select class="form-control required" id="gender" name="gender">
+											<option value="">Gender</option>
+											<option value="female">Female</option>
+											<option value="male">Male</option>
+											<option value="prefer not to say">Prefer not to say</option>
+										</select>
+									</div>
 								</div>
+	                        </div>
+	                        <!-- /step-->
+
+
+							<!--Coach-->
+	                    	<div class="step">
+	                            <h2 class="section_title">Find Your Coach</h2>
+	                            <h3 class="main_question">Day-to-day Coaching Support With Love</h3>
+								<div class="form-group add_top_30">
+									<label for="prefer_coach">Who do you prefer?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="prefer_coach" name="prefer_coach">
+											<option value="">Who do you prefer?</option>
+											<option value="female coach">Female coach</option>
+											<option value="male coach">Male coach</option>
+											<option value="no preference">No preference</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="ideal_coach">Describe your ideal coach trait</label>
+									<div class="styled-select">
+										<select class="form-control required" id="ideal_coach" name="ideal_coach">
+											<option value="">Describe your ideal coach</option>
+											<option value="detailed oriented">Detailed Oriented</option>
+											<option value="high energy">High Energy</option>
+											<option value="results oriented">Results Oriented</option>
+											<option value="well-balanced and all-rounded">Well-balanced and All-rounded</option>
+											<option value="calm, cool, and collected">Calm, Cool, and Collected</option>
+											<option value="always positive">Always Positive</option>
+											<option value="sense of humor">Has a Sense of Humor</option>
+											<option value="strictly business">Strictly Business</option>
+											<option value="goes the extra mile to personalized coaching">Goes the Extra Mile to Personalized Coaching</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="intensity_coach">What level of intensity do you want from your coach?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="intensity_coach" name="intensity_coach">
+											<option value="">What level of intensity do you want from your coach?</option>
+											<option value="not intense">Not Intense</option>
+											<option value="little intense">A Little Intense</option>
+											<option value="somewhat intense">Somewhat Intense</option>
+											<option value="intense">Intense</option>
+											<option value="very intense">Very Intense</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="expetise_coach">What coaching expertise are you looking for?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="expetise_coach" name="expetise_coach">
+											<option value="">What coaching expertise are you looking for?</option>
+											<option value="fitness specific">Fitness specific</option>
+											<option value="nutrition specific">Nutrition specific</option>
+											<option value="mental health specific">Mental health specific</option>
+											<option value="overall health">All-rounded and overall health</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group add_bottom_30">
+	                                <label for="coach_name">Optional - Do you have a coach in mind? Type coach's name</label>
+	                                <input type="text" name="coach_name" id="coach_name" maxlength="20" class="form-control" onchange="getVals(this, 'name_field');">
+	                            </div>
 	                        </div>
 	                        <!-- /step-->
 
 							<!--Fitness 1-->
 	                    	<div class="step">
 	                            <h2 class="section_title">Fitness</h2>
-	                            <h3 class="main_question">Step 1 - Your Active Lifestyle</h3>
+	                            <h3 class="main_question">Step 1 - Your Activeness and Goals</h3>
 								<div class="form-group add_top_30">
-									<label for="weight_range">What is your BMI?</label>
+									<label for="fitness_exp">What's your experience with fitness?</label>
 									<div class="styled-select">
-										<select class="form-control required" id="weight_range" name="weight_range">
-											<option value="">What is your BMI?</option>
-											<option value="&lt;18.5">Less than 18.5 - Underweight</option>
-											<option value="18.5-24.9">18.5-24.9 - Average weight</option>
-											<option value="25.0-29.9">25.0-29.9 - Overweight</option>
-											<option value="&gt;30">Greater 30 - Obese</option>
+										<select class="form-control required" id="fitness_exp" name="fitness_exp">
+											<option value="">What's your experience with fitness?</option>
+											<option value="new to fitness">I'm new to this</option>
+											<option value="used to workout and want to get back into it">I used to workout and want to get back into it</option>
+											<option value="currently workout">I currently workout</option>
+											<option value="fitness enthusiast">I am a fitness enthusiast</option>
 										</select>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="active_level">How active are you in your daily life?</label>
+									<label for="fitness_goal">What's your top fitness goal?</label>
 									<div class="styled-select">
-										<select class="form-control required" id="active_level" name="active_level">
-											<option value="">How active are you in your daily life?</option>
-											<option value="beginner">Beginner - Little to no exercise</option>
-											<option value="intermediate">Intermediate - Exercise 2 to 3 days per week</option>
-											<option value="advanced">Advanced - Exercise 5+ days per week</option>
+										<select class="form-control required" id="fitness_goal" name="fitness_goal">
+											<option value="">What's your top fitness goal?</option>
+											<option value="lose weight">Lose weight</option>
+											<option value="lose bellyfat">Lose belly fat</option>
+											<option value="gain muscle">Increase muscle mass</option>
+											<option value="improve health">Improve health and longevity</option>
+											<option value="improve as an athlete">Improve as an athlete or competitor</option>
+											<option value="not sure">I'm not sure</option>
 										</select>
 									</div>
 								</div>
 								<div class="form-group add_bottom_30">
-	                                <label for="fitness_days">Average days per week do you exercise at gym or home</label>
-	                                <input type="number" name="fitness_days" min="0" max="7" id="fitness_days" class="form-control required">
-	                            </div>
-	                        </div>
+									<label for="success_level">What else does success look like to you?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="success_level" name="success_level">
+											<option value="">What else does success look like to you?</option>
+											<option value="feel ready for an important event">Feel ready for an important event (wedding, vacation, etc.)</option>
+											<option value="fit into old clothes">Fit into old clothes</option>
+											<option value="feel stronger">Feel stronger</option>
+											<option value="feel more energized">Feel more energized</option>
+											<option value="improve mental health">Improve mental health</option>
+											<option value="make fitness a habit">Make fitness a habit</option>
+											<option value="make eating healthy a habit">Make eating healthy a habit</option>
+											<option value="learn to love working out">Learn to love working out</option>
+											<option value="Not sure">I'm not sure</option>
+										</select>
+									</div>
+								</div>
+							</div>
 	                        <!-- /step-->
 
 							<!--Fitness 2-->
 							<div class="step">
 	                            <h2 class="section_title">Fitness</h2>
-	                            <h3 class="main_question">Step 2 - Your Goals and Preferences</h3>
+	                            <h3 class="main_question">Step 2 - Your Experiences</h3>
 								<div class="form-group add_top_30">
-									<label for="fitness_goals">Your specific fitness goal</label>
+									<label for="weight_range">What is your BMI?</label>
 									<div class="styled-select">
-										<select class="form-control required" id="fitness_goals" name="fitness_goals">
-											<option value="">Your specific fitness goal</option>
-											<option value="lose_weight">Lose weight</option>
-											<option value="lose_bellyfat">Lose belly fat</option>
-											<option value="gain_muscle">Gain muscle</option>
-											<option value="stay_healthy">Stay healthy</option>
-											<option value="improve_endurance">Improve endurance</option>
-											<option value="other">Other</option>
+										<select class="form-control required" id="weight_range" name="weight_range">
+											<option value="">What is your BMI?</option>
+											<option value="underweight">Less than 18.5 - Underweight</option>
+											<option value="average weight">18.5-24.9 - Average weight</option>
+											<option value="overweight">25.0-29.9 - Overweight</option>
+											<option value="obese">Greater 30 - Obese</option>
 										</select>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="other_goals">If 'other' in the above, state other goals <small>(separate with ,)</small></label>
-									<input type="text" name="other_goals" id="other_goals" class="form-control">
+									<label for="hinder_goals">What's gotten in the way of achieving your goals?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="hinder_goals" name="hinder_goals">
+											<option value="">What's gotten in the way of achieving your goals?</option>
+											<option value="injury">Injury</option>
+											<option value="not enough accountability">Not enough accountability</option>
+											<option value="lost motivation">Lost motivation</option>
+											<option value="discouraged after not seeing results">Discouraged after not seeing results</option>
+											<option value="exercise not enjoyable">Exercise not enjoyable</option>
+											<option value="coaching not aggressive enough">Coaching not aggressive enough</option>
+											<option value="too busy">Too busy</option>
+											<option value="harrassment and abuse">Harrassment and abuse</option>
+											<option value="don't know">I don't know</option>
+										</select>
+									</div>
 								</div>
-								<label>Preferred fitness/workout stucture for your complete plan</label>
-								<div class="form-group radio_input add_bottom_30">
-								    <label class="container_radio me-3">At Gym 
-								        <input type="radio" name="workout_routine" value="gym_workout" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio me-3">At Home
-								        <input type="radio" name="workout_routine" value="home_workout" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-									<label class="container_radio">Mixed (Both Gym & Home)
-								        <input type="radio" name="workout_routine" value="mixed_workout" class="required">
-								        <span class="checkmark"></span>
-								    </label>
+								<div class="form-group add_bottom_30">
+									<label for="extra_fitness">Anything else we should know?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="extra_fitness" name="extra_fitness">
+											<option value="">Anything else we should know?</option>
+											<option value="has an injury">I have an injury that affects my physical ability</option>
+											<option value="has a health condition">I have a health condition</option>
+											<option value="currently pregnant">I'm currently pregnant</option>
+											<option value="had a baby not long ago">I had a baby not long ago</option>
+											<option value="has a physical disability">I have a physical disability</option>
+											<option value="nothing else">Nothing else</option>
+										</select>
+									</div>
 								</div>
 	                        </div>
 	                        <!-- /step-->
@@ -220,19 +307,25 @@
 									</div>
 								</div>
 								<div class="form-group">
-	                                <label for="takeout">How many days per week do you eat out or order takeout?</label>
-	                                <input type="number" name="takeout" min="0" max="7" id="takeout" class="form-control required">
-	                            </div>
+									<label for="favorite_foods">What are your favorite foods or meals? <small>(separate with ,)</small></label>
+									<input type="text" name="favorite_foods" id="favorite_foods" class="form-control required">
+								</div>
 								<div class="form-group add_bottom_30">
-									<label for="junk_food">How often do you consume junk food (like pizzas, soda drinks, etc.)?</label>
+									<label for="allergy_diet">Do you have any dietary restrictions or allergies?</label>
 									<div class="styled-select">
-										<select class="form-control required" id="junk_food" name="junk_food">
-											<option value="">How often do you consume junk food (like pizzas, soda drinks, etc.)?</option>
-											<option value="no_junkfoods">I don't eat junk foods</option>
-											<option value="occasionally_junkfoods">Occasionally about once/twice in a month</option>
-											<option value="1to2times_junkfoods">1-2 times a week</option>
-											<option value="3to6times_junkfoods">3-6 times a week</option>
-											<option value="everyday_junkfood">Everyday</option>
+										<select class="form-control required" id="allergy_diet" name="allergy_diet">
+											<option value="">Do you have any dietary restrictions or allergies?</option>
+											<option value="no allergies">No, I have no allergies</option>
+											<option value="allergic to eggs">I'm allergic to eggs</option>
+											<option value="allergic to dairy products">I'm allergic to dairy products like milk</option>
+											<option value="allergic to nuts and sorghums">I'm allergic to nuts and sorghums like soy</option>
+											<option value="allergic to spinach">I'm allergic to some green veggies like spinach</option>
+											<option value="allergic to fish">I'm allergic to fish</option>
+											<option value="allergic to shellfish and crustaceans">I'm allergic to shellfish and crustaceans like shrimps</option>
+											<option value="allergic to red meat">I'm allergic to some red meat like cows</option>
+											<option value="allergic to white meat">I'm allergic to white meat like chicken</option>
+											<option value="allergic to pork">I'm allergic to pork</option>
+											<option value="allergies not mentioned">I'm allergic to some foods but not in the above</option>
 										</select>
 									</div>
 								</div>
@@ -242,108 +335,105 @@
 							<!--Nutrition 2-->
 							<div class="step">
 	                            <h2 class="section_title">Nutrition</h2>
-	                            <h3 class="main_question">Step 2 - Your Meal Plan</h3>
-								<label>Do you have any dietary restrictions or allergies?</label>
-								<div class="form-group radio_input">
-								    <label class="container_radio me-3">Yes 
-								        <input type="radio" name="diet_restrictions" value="yes_diet" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">No
-								        <input type="radio" name="diet_restrictions" value="no_diet" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								</div>
-								<div class="form-group">
-									<label for="allergies">If 'yes' in the above, state dietary restrictions <small>(separate with ,)</small></label>
-									<input type="text" name="allergies" id="allergies" class="form-control">
-								</div>
-								<div class="form-group">
-									<label for="favorite_foods">What are your favorite healthy foods or meals? <small>(separate with ,)</small></label>
-									<input type="text" name="favorite_foods" id="favorite_foods" class="form-control required">
-								</div>
-								<div class="form-group">
-									<label for="nutrition_goals">Your specific nutrition goal</label>
+	                            <h3 class="main_question">Step 2 - Other Eating Habits</h3>
+								<div class="form-group add_top_30">
+									<label for="junk_food">How often do you consume junk food (like pizzas, fries, etc.)?</label>
 									<div class="styled-select">
-										<select class="form-control required" id="nutrition_goals" name="nutrition_goals">
-											<option value="">Your specific nutrition goal</option>
-											<option value="healthy_eating">Improve healthy eating</option>
-											<option value="detox">Start detox</option>
-											<option value="reduce_cholesterol">Reduce cholesterol levels</option>
-											<option value="boost_immunity">Boost immunity</option>
-											<option value="lower_chronicdisease">Lower risks of chronic disease</option>
-											<option value="improve_pregnancy">Improve healthy pregnancy</option>
-											<option value="other">Other</option>
+										<select class="form-control required" id="junk_food" name="junk_food">
+											<option value="">How often do you consume junk food (like pizzas, fries, etc.)?</option>
+											<option value="doesn't eat junkfoods">I don't eat junk foods</option>
+											<option value="occasionally eat junkfoods">Occasionally about once/twice in a month</option>
+											<option value="eat junkfoods 1 to 2 times">1-2 times a week</option>
+											<option value="eat junkfoods 3 to 6 times">3-6 times a week</option>
+											<option value="eat junkfood everyday">Everyday</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="alcohol_drink">How often do you consume alcoholic beverages?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="alcohol_drink" name="alcohol_drink">
+											<option value="">How often do you consume alcoholic beverages?</option>
+											<option value="doesn't drink alcohol">I don't drink acoholic beverages</option>
+											<option value="drink alcohol occasionally">Occasionally about once/twice in a month</option>
+											<option value="drink alcohol 1 to 2 times">1 to 2 times a week</option>
+											<option value="drink alcohol 3 to 6 times">3 to 6 times a week</option>
+											<option value="drink alcohol everyday">Everyday</option>
 										</select>
 									</div>
 								</div>
 								<div class="form-group add_bottom_30">
-									<label for="other_nutrigoals">If 'other' in the above, state other goals <small>(separate with ,)</small></label>
-									<input type="text" name="other_nutrigoals" id="other_nutrigoals" class="form-control">
+									<label for="nutrition_goals">Your specific nutrition goal</label>
+									<div class="styled-select">
+										<select class="form-control required" id="nutrition_goals" name="nutrition_goals">
+											<option value="">Your specific nutrition goal</option>
+											<option value="healthy eating">Improve healthy eating</option>
+											<option value="detox">Start detox</option>
+											<option value="reduce cholesterol">Reduce cholesterol levels</option>
+											<option value="boost immunity">Boost immunity</option>
+											<option value="lower chronic disease">Lower risks of chronic disease like cancer</option>
+											<option value="improve_pregnancy">Improve healthy pregnancy</option>
+											<option value="longevity and slow aging">Increase longevity and slow aging</option>
+											<option value="not sure">I'm not sure</option>
+										</select>
+									</div>
 								</div>
 	                        </div>
 	                        <!-- /step-->
 
 							<!--Mental Health-->
 	                    	<div class="step">
-	                            <h2 class="section_title">Mental Health</h2>
+	                            <h2 class="section_title">Mindfulness</h2>
 	                            <h3 class="main_question">Your Stress Management</h3>
 								<div class="form-group add_top_30">
-									<label for="stress_level">How would you rate your stress levels?</label>
+									<label for="stress_level">How would you rate your daily stress levels?</label>
 									<div class="styled-select">
 										<select class="form-control required" id="stress_level" name="stress_level">
-											<option value="">How would you rate your stress levels?</option>
-											<option value="1">1 - Minimal stress</option>
-											<option value="2">2 - Below average stress</option>
-											<option value="3">3 - Average stress</option>
-											<option value="4">4 - Above average stress</option>
-											<option value="5">5 - Extreme stress</option>
+											<option value="">How would you rate your daily stress levels?</option>
+											<option value="no stress">No stress</option>
+											<option value="minimal stress">Minimal stress</option>
+											<option value="somewhat stress">Somewhat stress</option>
+											<option value="stressful">Stressful</option>
+											<option value="Extreme stress">Extreme stress</option>
 										</select>
 									</div>
 								</div>
-								<label>Have you ever been diagnosed with a mental health condition (eg., anxiety, depression, etc.)?</label>
-								<div class="form-group radio_input">
-								    <label class="container_radio me-3">Yes 
-								        <input type="radio" name="mental_condition" value="yes_condition" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">No
-								        <input type="radio" name="mental_condition" value="no_condition" class="required">
-								        <span class="checkmark"></span>
-								    </label>
+								<div class="form-group">
+									<label for="mood_changes">Have you experienced any changes in your mood?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="mood_changes" name="mood_changes">
+											<option value="">Have you experienced any changes in your mood?</option>
+											<option value="no changes">No changes</option>
+											<option value="unusually down and anxious">I feel unusually down and anxious</option>
+											<option value="frequently down and anxious">I feel frequently down and anxious</option>
+										</select>
+									</div>
 								</div>
-								<label>Are you currently taking any mental health medications?</label>
-								<div class="form-group radio_input">
-								    <label class="container_radio me-3">Yes 
-								        <input type="radio" name="mental_meds" value="yes_meds" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">No
-								        <input type="radio" name="mental_meds" value="no_meds" class="required">
-								        <span class="checkmark"></span>
-								    </label>
+								<div class="form-group">
+									<label for="physical_symptoms">Are you experiencing any physical symptoms like trouble sleeping?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="physical_symptoms" name="physical_symptoms">
+											<option value="">Are you experiencing any physical symptoms like trouble sleeping?</option>
+											<option value="no physical symptom">No physical symptoms</option>
+											<option value="experience physical symptoms">I experience physical symptoms like trouble sleeping/eating</option>
+										</select>
+									</div>
 								</div>
-								<label>Do you currently consume any mental health services?</label>
-								<div class="form-group radio_input">
-								    <label class="container_radio me-3">Yes 
-								        <input type="radio" name="mental_doc" value="yes_doc" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">No
-								        <input type="radio" name="mental_doc" value="no_doc" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								</div>
-								<label>Interested in incorporating mindfulness into your plan?</label>
-								<div class="form-group radio_input add_bottom_30">
-								    <label class="container_radio me-3">Yes 
-								        <input type="radio" name="mindfulness" value="yes_mindfulness" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">No
-								        <input type="radio" name="mindfulness" value="no_mindfulness" class="required">
-								        <span class="checkmark"></span>
-								    </label>
+								<div class="form-group add_bottom_30">
+									<label for="coping_mechanism">How do you cope with stress and anxiety?</label>
+									<div class="styled-select">
+										<select class="form-control required" id="coping_mechanism" name="coping_mechanism">
+											<option value="">How do you cope with stress and anxiety?</option>
+											<option value="do fun activities">I just do fun activities like gaming</option>
+											<option value="seek counselling and therapy">I seek professional counselling and therapy</option>
+											<option value="connect with friends and family">I connect with friends and family</option>
+											<option value="meditate or pray">I meditate or pray</option>
+											<option value="procrastinate and avoid some tasks">I procrastinate and avoid some tasks</option>
+											<option value="self-isolate myself">I self-isolate myself from all interactions</option>
+											<option value="take in alcohol or smoke">I take in alcohol or smoke</option>
+											<option value="none of the above">None of the above</option>
+										</select>
+									</div>
 								</div>
 	                        </div>
 	                        <!-- /step-->
@@ -356,85 +446,27 @@
 	                                <label for="sleep_hours">How many hours of sleep do you typically get per night?</label>
 	                                <input type="number" name="sleep_hours" min="1" max="16" id="sleep_hours" class="form-control required">
 	                            </div>
-								<label>Do you experience difficulty falling asleep or staying asleep?</label>
-								<div class="form-group radio_input add_bottom_30">
-								    <label class="container_radio me-3">Yes 
-								        <input type="radio" name="sleep_patterns" value="yes_difficult" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">No
-								        <input type="radio" name="sleep_patterns" value="no_difficult" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								</div>
-	                        </div>
-	                        <!-- /step-->
-
-							<!--Personal Lifestyle-->
-							<div class="step">
-	                            <h2 class="section_title">Social Lifestyle</h2>
-	                            <h3 class="main_question">Your Social Lifestyle</h3>
-								<label>Do you smoke or use any tobacco products?</label>
-								<div class="form-group radio_input">
-								    <label class="container_radio me-3">Yes 
-								        <input type="radio" name="tobacco" value="yes_tobacco" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">No
-								        <input type="radio" name="tobacco" value="no_tobacco" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								</div>
 								<div class="form-group">
-									<label for="alcoholic_beverages">How often do you consume alcoholic beverages?</label>
+									<label for="sleeping_pills">Do you take any pills to help you sleep?</label>
 									<div class="styled-select">
-										<select class="form-control required" id="alcoholic_beverages" name="alcoholic_beverages">
-											<option value="">How often do you consume alcoholic beverages?</option>
-											<option value="no_beverage">I don't drink acoholic beverages</option>
-											<option value="occasionally_beverage">Occasionally about once/twice in a month</option>
-											<option value="1to2times_beverage">1-2 times a week</option>
-											<option value="3to6times_beverage">3-6 times a week</option>
-											<option value="everyday_beverage">Everyday</option>
+										<select class="form-control required" id="sleeping_pills" name="sleeping_pills">
+											<option value="">Do you take any pills to help you sleep?</option>
+											<option value="no sleeping pills">No</option>
+											<option value="yes sleeping pills">Yes</option>
 										</select>
 									</div>
 								</div>
-								<div class="form-group add_bottom_30">
-									<label for="hobbies">What hobbies/activities do you enjoy that help you relax and unwind? (eg. dancing)</label>
-									<input type="text" name="hobbies" id="hobbies" class="form-control required">
-								</div>
 	                        </div>
 	                        <!-- /step-->
-
-							<!--Extra Info-->
-	                        <div class="step">
-							    <h2 class="section_title">Extra Gists</h2>
-							    <h3 class="main_question">Other Preferences</h3>
-							    <div class="form-group add_top_30">
-							        <label for="concerns">Share any concerns, requests, or preferences that can help us create an exceptional personalized wellness plan for you</label>
-							        <textarea name="concerns" id="concerns" class="form-control" style="height: 100px"></textarea>
-							    </div>
-								<label>Do you want to subscribe to our newsletter? (Get info on wellness tips, great deals, news, etc.)</label>
-								<div class="form-group radio_input add_bottom_30">
-								    <label class="container_radio me-3">Yes 
-								        <input type="radio" name="newsletter" value="yes_newsletter" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								    <label class="container_radio">No
-								        <input type="radio" name="newsletter" value="no_newsletter" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								</div>
-							</div>
-							<!-- /step-->
 							
 							<!--Last Step-->
 	                        <div class="submit step" id="end">
 	                            <div class="summary">
 	                                <div class="wrapper" style="margin-top: -50px !important; margin-bottom: -50px !important;">
-	                                    <h3>Yaay!!! You made it,<br><span id="name_field"></span>!</h3>
-	                                    <p>Your wellness plan will be sent to your email address <strong id="email_field"></strong></p>
-										<p>Your assigned coaches will be in touch. Until then, Vaya Con Dios!!!</p>
-										<p>Need help? Contact support at <a href="mailto:hello@potathealth.com">hello@potathealth.com</a> or <a href="tel:+233596308718">(+233)59-630-8718.</a></p>
+	                                    <h3>Yaay! You made it,<br><span id="name_field"></span> &#128293;</h3>
+	                                    <p>You've got a match &#129355;. Check your email,  <strong id="email_field"></strong>, for more info about your coach and health plan.</p>
+										<p>Reach out to your assigned coach or wait for your coach to be in touch. Until then, Vaya Con Dios &#128075;</p>
+										<p>Need any help? Contact support at <a href="mailto:hello@potathealth.com">hello@potathealth.com</a> or <a href="tel:+233596308718">(+233)59-630-8718.</a></p>
 	                                </div>									
 	                                <div class="text-center">
 	                                    <div class="form-group terms">
